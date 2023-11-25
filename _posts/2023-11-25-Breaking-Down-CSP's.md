@@ -40,12 +40,9 @@ Commonly used directive values include:
 
 
 Note - there is also "unsafe" directives. These directives should be used with caution, as the name states they are unsafe:
-1.) **Unsafe Inline:** Permits the execution of inline JavaScript directly embedded within the HTML markup. 
-	a.) This is unsafe, because it allows the use of any inline (embedded) JavaScript within the HTML of the webpage to be executed.
-2.) **Unsafe Hashes:** Allows the execution of JavaScript based on their hashes. So this directive permits inline JavaScript if their hashes match the hashes specified in the policy. 
-	a.) Its unsafe because IF an attacker bypassed the security checks, then JS can be executed via XSS.
-3.) **Unsafe Eval:** Allows the use of the `eval()` function and similar methods to execute dynamically generated code. 
-	a.) This is unsafe because an attacker can abuse eval() sink to execute DOM-based vulns
+1. **Unsafe Inline:** Permits the execution of inline JavaScript directly embedded within the HTML markup. This is unsafe, because it allows the use of any inline (embedded) JavaScript within the HTML of the webpage to be executed.
+2. **Unsafe Hashes:** Allows the execution of JavaScript based on their hashes. So this directive permits inline JavaScript if their hashes match the hashes specified in the policy. This is unsafe because IF an attacker bypassed the security checks, then JS can be executed via XSS.
+3. **Unsafe Eval:** Allows the use of the `eval()` function and similar methods to execute dynamically generated code. This is unsafe because an attacker can abuse eval() sink to execute DOM-based vulns
 
 # Examples of CSP configurations:
 
@@ -73,7 +70,7 @@ Because the input is not sanitized or validated, a malicious user could enter:
 <script>alert(document.domain)</script>
 ```
 
-and reflected XSS would be triggered. To see this for yourself, see the following webpage: http://13.59.52.142/xss-test/noCSP-rXSS.php
+and reflected XSS would be triggered. To see this for yourself, see the following webpage: [http://13.59.52.142/xss-test/noCSP-rXSS.php](http://13.59.52.142/xss-test/noCSP-rXSS.php)
 
 
 Now imagine the following CSP is implemented: 
@@ -83,7 +80,7 @@ Content-Security-Policy: default-src 'self'; script-src 'self'
 
 Reflected XSS will *not* trigger, because of the `script-src 'self'` tag - only allowing the execution of JS from the same origin.
 
-To see for yourself, use the above payload at the following webpage: http://13.59.52.142/xss-test/CSP-rXSS.php
+To see for yourself, use the above payload at the following webpage: [http://13.59.52.142/xss-test/CSP-rXSS.php](http://13.59.52.142/xss-test/CSP-rXSS.php)
 
 Note: The HTML `<meta>` tag approach (`<meta http-equiv="Content-Security-Policy" ...`) is an alternate method that can be used if the server-side configuration isn't accessible. It is recommended to set the CSP as an HTTP header at the server level.
 
@@ -95,5 +92,5 @@ While utilizing a CSP is recommended, it can create a lot of overhead to ensure 
 
 The implementation of CSPs is likely going to be a trial-and-error process as figuring out the right combination of directive/values requires careful consideration and testing - to balance security and functionality. 
 
-Want help generating a CSP? Consider the following website:
-https://report-uri.com/home/generate
+Want help generating a CSP? 
+Consider the following website: [https://report-uri.com/home/generate](https://report-uri.com/home/generate)
