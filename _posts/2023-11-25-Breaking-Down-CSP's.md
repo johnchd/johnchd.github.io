@@ -5,6 +5,7 @@ To understand what a CSP is, its important to first understand what a website is
 - and then on top of all that there's images, videos, fonts, etc
   
 So what is a CSP?
+
 ***A CSP is a mechanism used to enforce what content can be loaded and used by a website.***
 
 The goal of a Content Security Policy is to block *all* inline JavaScript (which is JavaScript directly within the HTML of a webpage), unless the JavaScript comes from a trusted URL. Since the JavaScript only comes from trusted URLs, it helps mitigate against XSS.
@@ -39,12 +40,12 @@ Commonly used directive values include:
 
 
 Note - there is also "unsafe" directives. These directives should be used with caution, as the name states they are unsafe:
-1. **Unsafe Inline:** Permits the execution of inline JavaScript directly embedded within the HTML markup. 
-	1. This is unsafe, because it allows the use of any inline (embedded) JavaScript within the HTML of the webpage to be executed.
-2. **Unsafe Hashes:** Allows the execution of JavaScript based on their hashes. So this directive permits inline JavaScript if their hashes match the hashes specified in the policy. 
-	1. Its unsafe because IF an attacker bypassed the security checks, then JS can be executed via XSS.
-3. **Unsafe Eval:** Allows the use of the `eval()` function and similar methods to execute dynamically generated code. 
-	1. This is unsafe because an attacker can abuse eval() sink to execute DOM-based vulns
+1.) **Unsafe Inline:** Permits the execution of inline JavaScript directly embedded within the HTML markup. 
+	a.) This is unsafe, because it allows the use of any inline (embedded) JavaScript within the HTML of the webpage to be executed.
+2.) **Unsafe Hashes:** Allows the execution of JavaScript based on their hashes. So this directive permits inline JavaScript if their hashes match the hashes specified in the policy. 
+	a.) Its unsafe because IF an attacker bypassed the security checks, then JS can be executed via XSS.
+3.) **Unsafe Eval:** Allows the use of the `eval()` function and similar methods to execute dynamically generated code. 
+	a.) This is unsafe because an attacker can abuse eval() sink to execute DOM-based vulns
 
 # Examples of CSP configurations:
 
@@ -61,3 +62,38 @@ Content-Security-Policy: default-src 'self' example.com *.example.com
 ```
 
 This configuration allows loading resources such as scripts, stylesheets, images, etc., from the specified domains *including* itself, example.com, and subdomains of example.com
+
+
+# CSPs in use:
+
+Imagine a website administrator had a website that had the user input there name. Once submitted, the inputted name is then reflected back on page. 
+
+Because the input is not sanitized or validated, a malicious user could enter:
+```
+<script>alert(document.domain)</script>
+```
+
+and reflected XSS would be triggered. To see this for yourself, see the following webpage: http://13.59.52.142/xss-test/noCSP-rXSS.php
+
+
+Now imagine the following CSP is implemented: 
+```
+Content-Security-Policy: default-src 'self'; script-src 'self'
+```
+
+Reflected XSS will *not* trigger, because of the `script-src 'self'` tag - only allowing the execution of JS from the same origin.
+
+To see for yourself, use the above payload at the following webpage: http://13.59.52.142/xss-test/CSP-rXSS.php
+
+Note: The HTML `<meta>` tag approach (`<meta http-equiv="Content-Security-Policy" ...`) is an alternate method that can be used if the server-side configuration isn't accessible. It is recommended to set the CSP as an HTTP header at the server level.
+
+# Why not use CSP's all the time?
+
+The short answer is because its security mechanisms will likely affect functionalities within the webpage.
+
+While utilizing a CSP is recommended, it can create a lot of overhead to ensure the page works as intended once implemented. 
+
+The implementation of CSPs is likely going to be a trial-and-error process as figuring out the right combination of directive/values requires careful consideration and testing - to balance security and functionality. 
+
+Want help generating a CSP? Consider the following website:
+https://report-uri.com/home/generate
