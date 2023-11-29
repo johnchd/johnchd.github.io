@@ -10,7 +10,7 @@ So what is a CSP?
 
 The goal of a Content Security Policy is to block *all* inline JavaScript (which is JavaScript directly within the HTML of a webpage), unless the JavaScript comes from a trusted URL. Since the JavaScript only comes from trusted URLs, it helps mitigate against XSS.
 
-# CSP Syntax, Directives, and Values
+# CSP Syntax, Directives, and Values:
 
 CSP's are defined by policy directives, which then consist of values.
 
