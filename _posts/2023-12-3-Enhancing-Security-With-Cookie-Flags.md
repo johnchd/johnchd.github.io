@@ -77,7 +77,7 @@ The SameSite flag helps control how cookies are sent along with cross-origin req
 While Strict is the most secure as cookies are not sent with cross-origin requests, this flag restricts website functionality.
 
 ***SameSite:*** `Lax` - Cookies are only sent when:
-- A user enters the URL
+>- A user enters the URL
 - A user clicks a link from an external site
 NOTE: Lax is also the default of SameSite Cookies if an attribute is not set.
 
