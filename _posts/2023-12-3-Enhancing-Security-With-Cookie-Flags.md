@@ -62,6 +62,10 @@ The flag will prevent the cookie from being transmitted via HTTP - and the cooki
 
 Setting the Secure flag solves the problem of transmission of cookies via HTTP, by automatically changing to HTTPS.
 
+Note: Sometimes there is confusion between the `Secure` flag and the `HSTS` header - but they are different.
+
+The `Secure` flag is used within the `Set-Cookie` header to ensure the *secure transmission of cookies* exclusively over HTTPS connections. On the other hand, the `HSTS` header instructs web browsers to communicate *only* via HTTPS, ensuring that *all* connections are encrypted and secure.
+
 ***HTTPOnly:***
 This flag makes the cookie NOT accessible via JavaScript. This means the attacker will not be able to extract the cookie in the event XSS is possible.
 
