@@ -14,7 +14,7 @@ After the server receives the HTTP request, the server can send one or more `Set
 
 The `Set-Cookie` header is just a response header used to set or update cookies based on the specified attributes.
 
-The Set-Cookie header typically contains the following attributes:
+The `Set-Cookie` header typically contains the following attributes:
 - Cookie name/value
 - Expiration
 - Domain
@@ -46,16 +46,16 @@ There is no "set-it-and-forget-it" configuration for a cookie, as the configurat
 Its important to note that if a site authenticates users, it should regenerate and resend cookies (even if cookies are not expired) every time a user authenticates. Addressing the reuse of cookies (and the uniqueness of a cookie) helps mitigate session fixation attacks.
 
 ***Domain:***
-Extra thought should be put into setting the Domain attribute. This is because if the `Set-Cookie` header field **does not** have the `Domain` attribute (which is default), the effective domain is the domain of the request.
+Extra thought should be put into setting the Domain attribute. This is because if the `Set-Cookie` header field **does not** have the `Domain` attribute (which is default), so the effective domain is the domain of the request.
 
 However, consider the following example where a developer wants to specify the cookie for only a certain domain:
 
-The website is named test4jc.com, and the developer sets the domain attribute to test4jc.com as so:
+The website is named `test4jc.com`, and the developer sets the `Domain` attribute to `test4jc.com` as so:
 ```
 Set-Cookie: myCookie=myValue; Domain=test4jc.com; Path=/; Expires=Wed, 01 Jan 2025 00:00:00 GMT; Secure; HttpOnly; SameSite=Strict
 ```
 
-Explicitly setting the `Domain` attribute to `test4jc.com`, the cookie is *automatically* converted to `.test4jc.com`, and in turn will be available to `test.test4jc.com`. By using the domain attribute, the developer has inadvertently opened up this cookie for all subdomains of `test4jc.com`.
+Explicitly setting the `Domain` attribute to `test4jc.com`, the cookie is *automatically* converted to `.test4jc.com`, and in turn will be available to `test.test4jc.com`. So by using the `Domain` attribute, the developer has inadvertently opened up this cookie for all subdomains of `test4jc.com`.
 
 ***Secure:***
 The flag will prevent the cookie from being transmitted via HTTP - and the cookie will ONLY be transmitted via HTTPS. 
@@ -70,13 +70,13 @@ Setting the HTTPOnly flag solves the problem of JavaScript being able to access 
 ***SameSite:***
 The SameSite flag helps control how cookies are sent along with cross-origin requests. The SameSite flag is responsible for preventing vulnerabilities such as CSRF and mitigating against XSS.
 
-***SameSite:*** `Strict` - Cookies are only sent when:
+^***SameSite:*** `Strict` - Cookies are only sent when:
 - a user navigates directly to the site  
 - a user enters the URL
 - submitting a form on the site itself
 While Strict is the most secure as cookies are not sent with cross-origin requests, this flag restricts website functionality.
 
-***SameSite:*** `Lax` - Cookies are only sent when:
+^***SameSite:*** `Lax` - Cookies are only sent when:
 - A user enters the URL
 - A user clicks a link from an external site
 NOTE: Lax is also the default of SameSite Cookies if an attribute is not set.
@@ -85,7 +85,7 @@ NOTE: Lax is also the default of SameSite Cookies if an attribute is not set.
 - Strict sends the cookie ONLY for same-site requests
 - Lax however, one can click follow a link from an external website and the cookies will be sent
 
-***SameSite:*** `None` - Cookies are always sent, BUT requires the ***Secure*** attribute.
+^***SameSite:*** `None` - Cookies are always sent, BUT requires the ***Secure*** attribute.
 
 
 # Putting it all together:
