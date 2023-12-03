@@ -70,13 +70,13 @@ Setting the HTTPOnly flag solves the problem of JavaScript being able to access 
 ***SameSite:***
 The SameSite flag helps control how cookies are sent along with cross-origin requests. The SameSite flag is responsible for preventing vulnerabilities such as CSRF and mitigating against XSS.
 
->***SameSite:*** `Strict` - Cookies are only sent when:
-- a user navigates directly to the site  
+***SameSite:*** `Strict` - Cookies are only sent when:
+>- a user navigates directly to the site  
 - a user enters the URL
 - submitting a form on the site itself
 While Strict is the most secure as cookies are not sent with cross-origin requests, this flag restricts website functionality.
 
->***SameSite:*** `Lax` - Cookies are only sent when:
+***SameSite:*** `Lax` - Cookies are only sent when:
 - A user enters the URL
 - A user clicks a link from an external site
 NOTE: Lax is also the default of SameSite Cookies if an attribute is not set.
@@ -85,7 +85,7 @@ NOTE: Lax is also the default of SameSite Cookies if an attribute is not set.
 - Strict sends the cookie ONLY for same-site requests
 - Lax however, one can click follow a link from an external website and the cookies will be sent
 
->***SameSite:*** `None` - Cookies are always sent, BUT requires the ***Secure*** attribute.
+***SameSite:*** `None` - Cookies are always sent, BUT requires the ***Secure*** attribute.
 
 
 # Putting it all together:
