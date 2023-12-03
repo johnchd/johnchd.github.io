@@ -78,12 +78,12 @@ The SameSite flag helps control how cookies are sent along with cross-origin req
 >- a user navigates directly to the site  
 - a user enters the URL
 - submitting a form on the site itself
-While Strict is the most secure as cookies are not sent with cross-origin requests, this flag restricts website functionality.
+- While Strict is the most secure as cookies are not sent with cross-origin requests, this flag restricts website functionality.
 
 ***SameSite:*** `Lax` - Cookies are only sent when:
 >- A user enters the URL
 - A user clicks a link from an external site
-NOTE: Lax is also the default of SameSite Cookies if an attribute is not set.
+- NOTE: Lax is also the default of SameSite Cookies if an attribute is not set.
 
 **So whats the main difference between strict and lax?**
 - Strict sends the cookie ONLY for same-site requests
@@ -94,7 +94,7 @@ NOTE: Lax is also the default of SameSite Cookies if an attribute is not set.
 
 # Putting it all together:
 
-Cookies serve multiple purposes - from enabling session management, to personalization preferences, and even user tracking. In addition to the cookie header, the `Set-Cookie` header is also used with attributes such as expiration, domain, `Secure`, `HttpOnly`, and `SameSite`. Ensuring the `Set-Cookie` flags *(specifically Secure, HttpOnly, and SameSite)* are set properly is important to prevent cookie-related attacks such as XSS, CSRF, and session-fixation.
+Cookies serve multiple purposes - from enabling session management, to personalization preferences, and even user tracking. In addition to the cookie header, the `Set-Cookie` header is also used with attributes such as expiration, domain, `Secure`, `HttpOnly`, and `SameSite`. Ensuring the `Set-Cookie` flags ***(specifically Secure, HttpOnly, and SameSite)*** are set properly is important to prevent cookie-related attacks such as XSS, CSRF, and session-fixation.
 
 
 
