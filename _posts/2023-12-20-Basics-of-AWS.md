@@ -19,7 +19,7 @@ AWS offers what's called ***Organizations*** - which act as a centralized way fo
 The following visual will help understand this better:
 
 
-![AWS-Orgs](1.png)
+![AWS-Orgs](https://github.com/johnchd/johnchd.github.io/raw/main/_posts/1.png)
 
 
 
