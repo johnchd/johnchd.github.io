@@ -17,6 +17,8 @@ All these terms are essential to know when testing an AWS Environment.
 AWS offers what's called ***Organizations*** - which act as a centralized way for businesses to effectively manage AWS accounts and the allocations of resources. Only the ***Master account*** (or root account) can create an Organization, and there is only one Master account in an organization. AWS Organizations allow multiple AWS ***Member*** accounts grouped into ***Organizational Units*** (OU's), creating a hierarchical structure. OU's can then be controlled by ***Server Control Policies*** (SCP's), establishing *broad* access control at the organizational level.
 
 The following visual will help understand this better:
+
+
 ![AWS-Orgs](1.png)
 
 
