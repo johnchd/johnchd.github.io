@@ -14,7 +14,7 @@ All these terms are essential to know when testing an AWS Environment.
 
 # AWS Organizations:
 
-AWS offers whats called ***Organizations*** - which act as a centralized way for businesses to effectively manage AWS account and the allocations of resources. Only the ***Master account*** (or root account) can create an Organization, and there is ***only one*** Master account in an organization. AWS Organizations allow multiple AWS ***Member*** accounts grouped into ***Organizational Units*** (OU's), creating a hierarchical structure. OU's can then be controlled by ***Server Control Policies*** (SCP's), establishing *broad* access-control at the organizational level.
+AWS offers what's called ***Organizations*** - which act as a centralized way for businesses to effectively manage AWS account and the allocations of resources. Only the ***Master account*** (or root account) can create an Organization, and there is ***only one*** Master account in an organization. AWS Organizations allow multiple AWS ***Member*** accounts grouped into ***Organizational Units*** (OU's), creating a hierarchical structure. OU's can then be controlled by ***Server Control Policies*** (SCP's), establishing *broad* access-control at the organizational level.
 
 The following visual will help understand this better:
 ![[Screenshot 2023-12-18 at 6.37.34 PM.png]]
@@ -29,7 +29,7 @@ AWS consists of 2 kinds of accounts:
 Master account:
 - Also known as the Management account or root account, responsible for creating an Organization
 - Only ONE of these accounts
-- Has the ability to to invite other AWS accounts and create OU's
+- Has the ability to invite other AWS accounts and create OU's
 - SCP's are applied by the Master account to define access-control policies for OU's ***and*** member accounts 
 
 Member account:
@@ -38,7 +38,7 @@ Member account:
 - Can be grouped into OU's for management
 - Can create and manage their own AWS resources, but ultimately operate under the constraints of the SCP's applied by the Master
 
-In order to represent an organizations structure, ***Member*** accounts are grouped into ***Organizational Units*** controlled by ***SCP's***. OU's and SCP's are ***are designed to consistently implement access control policies across an entire organization.**
+To represent an organization's structure, ***Member*** accounts are grouped into ***Organizational Units*** controlled by ***SCP's***. OU's and SCP's are ***are designed to consistently implement access control policies across an entire organization.**
 
 SCP's:
 - Designed for controlling access control at scale across multiple OU's or AWS accounts
@@ -50,7 +50,7 @@ Overall the Master account is responsible for the creation of an Organization, a
 
 # ARN's, IAM Users, IAM Policies, and IAM Roles
 
-When enumerating a cloud environment in AWS, you will come across whats called an ***ARN***. ***ARN*** is an acronym for ***Amazon Resource Name*** and is used as a unique identifier for AWS resources. Below is the breakdown of an ARN:
+When enumerating a cloud environment in AWS, you will come across what's called an ***ARN***. ***ARN*** is an acronym for ***Amazon Resource Name*** and is used as a unique identifier for AWS resources. Below is the breakdown of an ARN:
 
 ```
 arn:aws:service:region:account-id:resource
@@ -89,7 +89,7 @@ The associated **IAM Permission** assigned for the **IAM user** would look like 
 }
 ```
 
-Lastly, there is IAM Roles. To understand IAM Roles, consider the following scenario:
+Lastly, there are IAM Roles. To understand IAM Roles, consider the following scenario:
 
 Your manager needs help with regularly backing up EC2 instance data to an S3 bucket. As a result, you create an IAM Role named `ec2-to-s3-role`. Within the `ec2-to-s3-role`, you attach a policy specifying permissions to read/write data to the s3 bucket. You then assign this IAM Role (`ec2-to-s3-role`) to the associated EC2 instance.
 
