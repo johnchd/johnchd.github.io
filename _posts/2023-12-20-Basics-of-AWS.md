@@ -14,11 +14,9 @@ All these terms are essential to know when testing an AWS Environment.
 
 # AWS Organizations:
 
-AWS offers what's called ***Organizations*** - which act as a centralized way for businesses to effectively manage AWS accounts and the allocations of resources. Only the ***Master account*** (or root account) can create an Organization, and there is only one Master account in an organization. AWS Organizations allow multiple AWS ***Member*** accounts grouped into ***Organizational Units*** (OU's), creating a hierarchical structure. OU's can then be controlled by ***Server Control Policies*** (SCP's), establishing *broad* access control at the organizational level.
+AWS offers what's called ***Organizations*** - which act as a centralized way for businesses to effectively manage AWS accounts and the allocations of resources. Only the ***Master*** account (or root account) can create an Organization, and there is only one Master account in an organization. AWS Organizations allow multiple AWS ***Member*** accounts grouped into ***Organizational Units*** (OU's), creating a hierarchical structure. OU's can then be controlled by ***Server Control Policies*** (SCP's), establishing *broad* access control at the organizational level.
 
 The following visual will help understand this better:
-
-
 ![AWS-Orgs](https://github.com/johnchd/johnchd.github.io/raw/main/_posts/1.png)
 
 
@@ -33,7 +31,7 @@ AWS consists of 2 kinds of accounts:
 - Also known as the Management account or root account, responsible for creating an Organization
 - Only ONE of these accounts
 - Can invite other AWS accounts and create OU's
-- SCP's are applied by the Master account to define access-control policies for OU's ***and*** member accounts 
+- SCP's are applied by the Master account to define access-control policies for OU's and member accounts 
 
 **Member account:**
 - Typical AWS accounts that join an AWS organization, created by the Master
@@ -53,7 +51,7 @@ Overall the Master account is responsible for the creation of an Organization, a
 
 # ARN's, IAM Users, IAM Policies, and IAM Roles
 
-When enumerating a cloud environment in AWS, you will come across what's called an ***ARN***. ***ARN*** is an acronym for ***Amazon Resource Name*** and is used as a unique identifier for AWS resources. Below is the breakdown of an ARN:
+When enumerating a cloud environment in AWS, you will come across what's called an ***ARN***. **ARN** is an acronym for ***Amazon Resource Name*** and is used as a unique identifier for AWS resources. Below is the breakdown of an ARN:
 
 ```
 arn:aws:service:region:account-id:resource
@@ -91,6 +89,8 @@ The associated **IAM Permission** assigned for the **IAM user** would look like 
   ]
 }
 ```
+
+
 
 Lastly, there are **IAM Roles**. To understand IAM Roles, consider the following scenario:
 
