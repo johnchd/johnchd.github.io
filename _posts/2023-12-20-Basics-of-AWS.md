@@ -123,10 +123,12 @@ The above example would have the following IAM Role attached to the EC2 instance
 
 ```
 
-
-Thanks for reading and I hope you found this blog useful. Please reach out if I have a misunderstanding on anything.
-
 Next up will be enumerating AWS cloud environments.
+
+References:
+- https://docs.aws.amazon.com/organizations/latest/userguide/orgs_getting-started_concepts.html
+- https://docs.aws.amazon.com/IAM/latest/UserGuide/introduction_access-management.html
+- https://docs.aws.amazon.com/IAM/latest/UserGuide/reference-arns.html
 
 
 
