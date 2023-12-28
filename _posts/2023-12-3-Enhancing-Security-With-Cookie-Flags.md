@@ -98,7 +98,7 @@ Cookies serve multiple purposes - from enabling session management, to personali
 
 
 References:
-https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Set-Cookie
+- https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Set-Cookie
 
 
 
