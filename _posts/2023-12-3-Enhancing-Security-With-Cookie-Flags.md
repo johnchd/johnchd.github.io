@@ -97,6 +97,8 @@ The SameSite flag helps control how cookies are sent along with cross-origin req
 Cookies serve multiple purposes - from enabling session management, to personalization preferences, and even user tracking. In addition to the cookie header, the `Set-Cookie` header is also used with attributes such as expiration, domain, `Secure`, `HttpOnly`, and `SameSite`. Ensuring the `Set-Cookie` flags ***(specifically Secure, HttpOnly, and SameSite)*** are set properly is important to prevent cookie-related attacks such as XSS, CSRF, and session-fixation.
 
 
+References:
+https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Set-Cookie
 
 
 
