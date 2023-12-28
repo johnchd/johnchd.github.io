@@ -94,3 +94,6 @@ The implementation of CSPs is likely going to be a trial-and-error process as fi
 
 Want help generating a CSP? 
 Consider the following website: [https://report-uri.com/home/generate](https://report-uri.com/home/generate)
+
+References:
+- https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP
