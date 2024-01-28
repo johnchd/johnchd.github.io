@@ -42,7 +42,7 @@ BUT, we know that the application is vulnerable to IDOR - and all we need is som
 
 When testing for IDOR's, my methodology is broken down into three parts.
 
-### Part 1 - Application Layer:
+###Part 1 - Application Layer:
 - Does the application have any functionality that incorporates *other* users? Examples include:
 	- Sending a message to other users
 	- Sharing information (documents, files, resources, etc)
