@@ -42,7 +42,7 @@ BUT, we know that the application is vulnerable to IDOR - and all we need is som
 
 When testing for IDOR's, my methodology is broken down into three parts.
 
-Part 1 - Application Layer:
+### Part 1 - Application Layer:
 - Does the application have any functionality that incorporates *other* users? Examples include:
 	- Sending a message to other users
 	- Sharing information (documents, files, resources, etc)
@@ -50,9 +50,9 @@ Part 1 - Application Layer:
 		- If there is posting of comments, is there tagging of other users?
 	- Is there a subscription/follow feature where one can follow other users?
 
-~~Every application is different and there are plenty of more examples that can be added to this list. ~~These are a few basic examples of ways UUID's can be leaked within the application. Dig deep and strive to understand *what* the application actually does. By understanding what the application actually does, you'll find even more vulns (access control, info disclosure, etc). It's possible the application may not have any of these features, but theres still more ways UUID's can be disoovered.
+These are a few basic examples of ways UUID's can be leaked within the application. Dig deep and strive to understand *what* the application actually does. By understanding what the application actually does, you'll find even more vulns (access control, info disclosure, etc). It's possible the application may not have any of these features, but theres still more ways UUID's can be disoovered.
 
-Part 2 - Content Discovery:
+### Part 2 - Content Discovery:
 - Are there any other UUID's that have populated within the HTTP history of burp? Consider using the bcheck for [UUID's](https://github.com/PortSwigger/BChecks/blob/main/other/uuid-detected-guid-versions.bcheck)
 - Is there any JS files? Parse them for any other API ep's with burp extensions like [JS Miner](https://portswigger.net/bappstore/0ab7a94d8e11449daaf0fb387431225b)
 - Is there any API calls? Get fuzzin!!!!! it cant hurt.
@@ -60,7 +60,7 @@ Part 2 - Content Discovery:
 	- Chop down the directories and see if you can access anything else. 
 	- Is there any API calls specifying a version like /api/v3/update-profile? Change the /v3/ to /v2/.
 
-Part 3 - OSINT:
+### Part 3 - OSINT:
 - Is the UUID leaked within any GET requests? Perhaps you can retrieve the ID via the [WayBack Machine](https://archive.org/web/) or [Google Dorking](https://www.imperva.com/learn/application-security/google-dorking-hacking/)
 
 If all these fail, there are still plenty of other strategies within the request itself. I've found a handful of IDORs using this strategy and wanted to write it out for myself and figured others might find some value in it.
