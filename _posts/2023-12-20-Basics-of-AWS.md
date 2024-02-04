@@ -74,9 +74,9 @@ Note: both IAM policies and SCP's are responsible for access control; however IA
 
 To further understand a scenario implementing the use of **IAM Users** and **IAM Policies**, consider the following scenario:
 
-Your manager has asked you to administer a specific EC2 instance within AWS. As a result, your manager has created you an **IAM User**. In order to follow the principle of least privilege, your manager has assigned **IAM Permissions** (to your IAM User) granting you full permissions to the specified EC2 instance by using the associated ARN.
+Your manager has asked you to administer a specific EC2 instance within AWS. As a result, your manager has created you an **IAM User**. In order to follow the principle of least privilege, your manager has defined specific **IAM Permissions** within an **IAM Policy** granting you full permission to the specified EC2 instance by using the associated ARN.
 
-The associated **IAM Permission** assigned for the **IAM user** would look like this:
+The associated IAM Policy has the following **IAM Permission** defined for the **IAM user**:
 ```json
 {
   "Version": "2012-10-17",
@@ -123,7 +123,14 @@ The above example would have the following IAM Role attached to the EC2 instance
 
 ```
 
-Next up will be enumerating AWS cloud environments.
+So to wrap up:
+
+**IAM Permissions**: These are the individual rights or actions that a user, group, or role is allowed or denied to perform on AWS resources. For example, permissions can include actions like `ec2:StartInstances`, `s3:GetObject`, etc.
+ 
+**IAM Policy**: An IAM policy is a document that defines one or more permissions. It's a JSON document that specifies what actions are allowed or denied on which AWS resources. Policies are attached to IAM users, groups, or roles to grant or restrict their access
+ 
+IAM Policies define IAM Permissions, and IAM Permissions are the individual actions within the policy.
+
 
 References:
 - https://docs.aws.amazon.com/organizations/latest/userguide/orgs_getting-started_concepts.html
