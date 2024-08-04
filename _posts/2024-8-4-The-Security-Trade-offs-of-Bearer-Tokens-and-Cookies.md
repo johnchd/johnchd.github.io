@@ -1,6 +1,6 @@
 
 
-Recently 0xTib3rius created a [post]([https://x.com/0xTib3rius/status/1817665317503455682](https://x.com/0xTib3rius/status/1817665317503455682)) on X about the "where to store JWTs".  I found it to be a good discussion topic as understanding session/local storage, httpOnly, SameSite attributes, CSPs, and CORs is essential to mitigating risks associated with XSS and CSRF attacks.
+Recently 0xTib3rius created a [post](https://x.com/0xTib3rius/status/1817665317503455682) on X about the "where to store JWTs".  I found it to be a good discussion topic as understanding session/local storage, httpOnly, SameSite attributes, CSPs, and CORs is essential to mitigating risks associated with XSS and CSRF attacks.
 
 His post made me want to write about my thoughts on session vs local storage and unpack his tweet. This post will have 3 parts:
 - Part 1 - Session Storage vs Local Storage
