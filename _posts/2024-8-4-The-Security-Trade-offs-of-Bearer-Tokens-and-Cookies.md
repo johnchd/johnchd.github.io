@@ -34,7 +34,7 @@ You sign into an app online and change the theme from light to dark. You close y
 
 "*A lot of people will argue that if your app is vulnerable to XSS, cookies with HttpOnly are at least protected from JavaScript, while Session/Local Storage are designed to be accessed by JavaScript.*
 
-"*This might seem like cookies have a big advantage, but what this really means is that cookies cannot be stolen. However, since the browser automatically adds cookies to requests, any XSS attack could send valid requests and steal the data from the responses. So yes, while you don't get the actual session token, you can still use it, which is ultimately what an attacker wants to do anyway.*"
+*This might seem like cookies have a big advantage, but what this really means is that cookies cannot be stolen. However, since the browser automatically adds cookies to requests, any XSS attack could send valid requests and steal the data from the responses. So yes, while you don't get the actual session token, you can still use it, which is ultimately what an attacker wants to do anyway.*"
 
 
 While cookies with HttpOnly can't be accessed via JavaScript, many people argue that cookies are more secure than session/local storage. Initially, I thought this too, but although cookies can't be stolen via XSS due to the HttpOnly flag, there are still security concerns.
