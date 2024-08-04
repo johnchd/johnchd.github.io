@@ -32,9 +32,9 @@ You sign into an app online and change the theme from light to dark. You close y
 # Part 2 - Break Down of the post:
 
 
-"_A lot of people will argue that if your app is vulnerable to XSS, cookies with HttpOnly are at least protected from JavaScript, while Session/Local Storage are designed to be accessed by JavaScript.
+"*A lot of people will argue that if your app is vulnerable to XSS, cookies with HttpOnly are at least protected from JavaScript, while Session/Local Storage are designed to be accessed by JavaScript.
 
-This might seem like cookies have a big advantage, but what this really means is that cookies cannot be stolen. However, since the browser automatically adds cookies to requests, any XSS attack could send valid requests and steal the data from the responses. So yes, while you don't get the actual session token, you can still use it, which is ultimately what an attacker wants to do anyway._"
+This might seem like cookies have a big advantage, but what this really means is that cookies cannot be stolen. However, since the browser automatically adds cookies to requests, any XSS attack could send valid requests and steal the data from the responses. So yes, while you don't get the actual session token, you can still use it, which is ultimately what an attacker wants to do anyway.*"
 
 
 While cookies with HttpOnly can't be accessed via JavaScript, many people argue that cookies are more secure than session/local storage. Initially, I thought this too, but although cookies can't be stolen via XSS due to the HttpOnly flag, there are still security concerns.
@@ -44,9 +44,9 @@ If the app is vulnerable to XSS, the attacker can use the XSS to make requests a
 So despite the cookie having the HttpOnly flag set, the attacker can still impersonate the user and retrieve sensitive data (as if they had the actual session token).
 
 
-"_Moreover, if you rely on cookies, your app needs to protect itself against CSRF. This has become easier with SameSite cookie attributes, but they are not without their limitations ([https://portswigger.net/web-security/csrf/bypassing-samesite-restrictions](https://portswigger.net/web-security/csrf/bypassing-samesite-restrictions)).
+"*Moreover, if you rely on cookies, your app needs to protect itself against CSRF. This has become easier with SameSite cookie attributes, but they are not without their limitations ([https://portswigger.net/web-security/csrf/bypassing-samesite-restrictions](https://portswigger.net/web-security/csrf/bypassing-samesite-restrictions)).
 
-If you use Session/Local Storage and set session tokens via a non-Cookie header (e.g. Authorization), CSRF is impossible. It's important to note that if your app is vulnerable to XSS, all your CSRF protections will fail regardless of how you store session tokens._"
+If you use Session/Local Storage and set session tokens via a non-Cookie header (e.g. Authorization), CSRF is impossible. It's important to note that if your app is vulnerable to XSS, all your CSRF protections will fail regardless of how you store session tokens.*"
 
 
 If your app relies on cookies, it needs to protect itself against CSRF. Why? **Because browsers automatically include cookies in every request.** This means that requests made from the user's browser to the server will include cookies, even authentication cookies.
