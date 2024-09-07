@@ -1,10 +1,10 @@
 Recently I was introduced to the game OWASP Cornucopia, a threat modeling game card game that encourages collaborative discussions about security. The game is based on 6 categories and each category is a suit:  
-	- Authentication  
-	- Authorization  
-	- Data Validation & Encoding
-	- Session Management  
-	- Cryptography  
-	- Cornucopia
+* Authentication  
+* Authorization  
+* Data Validation & Encoding
+* Session Management  
+* Cryptography  
+* Cornucopia
 
 Each category has 13 cards, 2-10, Jack, Queen, King, Ace, and Ace is high. The higher your card is, the more difficult the scenario is. 
 
