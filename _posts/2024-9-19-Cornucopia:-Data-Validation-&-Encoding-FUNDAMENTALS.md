@@ -17,7 +17,7 @@ If the app does not sanitize or encode the input, the browser will interpret tha
 
 Validation ensures user input meets the expected format, type, and constraints before it is stored. 
 
-Consider an application expects a user to enter there age. If validation is implemented, the application will expect:
+Consider an application expects a user to enter their age. If validation is implemented, the application will expect:
 *a positive number
 *a range between 1-100
 
@@ -37,7 +37,7 @@ Types of validation include:
   * Format (using regular expressions)
   * Range (age 18-24)
 
-Validation does not only prevent injection attacks, but also ensures data integrity.
+Validation does not only prevent injection attacks but also ensures data integrity.
 
 
 # Sanitization
@@ -77,8 +77,8 @@ so the example becomes:
 ```
 
 Now the browser treats it as plain text and NOT as code. Examples of when an application may want to render user input is:
-	- An app may allow users to create/format a blog post, comments, or messages
-	- An app may have user input inserted into HTML fields, and then placed into a PDF
+* An app may allow users to create/format a blog post, comments, or messages
+* An app may have user input inserted into HTML fields, and then placed into a PDF
 
 Note that the above example is HTML encoding, and each data context (HTML, JavaScript, URL, etc.) requires different types of encoding.
 
