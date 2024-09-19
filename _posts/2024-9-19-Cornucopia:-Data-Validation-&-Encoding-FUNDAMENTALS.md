@@ -18,8 +18,8 @@ If the app does not sanitize or encode the input, the browser will interpret tha
 Validation ensures user input meets the expected format, type, and constraints before it is stored. 
 
 Consider an application expects a user to enter there age. If validation is implemented, the application will expect:
-	- a positive number
-	- a range between 1-100
+*a positive number
+*a range between 1-100
 
 So if a user tried to enter:
 ```
@@ -29,9 +29,9 @@ So if a user tried to enter:
 It would never be stored, because it doesn't meet the expected criteria of a persons age.
 
 Types of validation include:
-	- Client-Side: performed in the users browser using JS (easily bypassed)
-	- Server-Side: performed on the server where it can not be tampered with
-	- Field-Specific: 
+*Client-Side: performed in the users browser using JS (easily bypassed)
+*Server-Side: performed on the server where it can not be tampered with
+*Field-Specific: 
 		- Length
 		- Type (valid phone number, email address, zip code)
 		- Format (using regular expressions)
