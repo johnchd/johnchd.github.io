@@ -32,10 +32,10 @@ Types of validation include:
 * Client-Side: performed in the users browser using JS (easily bypassed)
 * Server-Side: performed on the server where it can not be tampered with
 * Field-Specific: 
-		* Length
-		* Type (valid phone number, email address, zip code)
-		* Format (using regular expressions)
-		* Range (age 18-24)
+  * Length
+  * Type (valid phone number, email address, zip code)
+  * Format (using regular expressions)
+  * Range (age 18-24)
 
 Validation does not only prevent injection attacks, but also ensures data integrity.
 
