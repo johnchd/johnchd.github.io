@@ -40,8 +40,8 @@ Say you find a bug and want to submit a CVE. The process can be confusing if you
 7. Wait for response back from MITRE telling you your CVE is now public.
 
 For more information, read these links:
-- https://cve.mitre.org/docs/docs-2016/CVE_Request_Web_Form_Tip_Sheet.pdf
-- https://cve.mitre.org/CVEIDsAndHowToGetThem.pdf
+- https://cve.mitre.org/docs/docs-2016/CVE_Request_Web_Form_Tip_Sheet.pdf 
+- https://cve.mitre.org/CVEIDsAndHowToGetThem.pdf 
 
 I followed the processes above and got the following 4 CVE's accepted:
 
