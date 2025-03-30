@@ -39,7 +39,7 @@ If we swap the ID's we can see there is a lack of user-specific access controls 
 
 When testing for IDOR's, my methodology is broken down into three parts.
 
-**Part 1 - Application Layer:**
+**Part 1 - Functionality:**
 - Does the application have any functionality that incorporates other users? For example:
 	- Sending a message to other users
 	- Sharing information (documents, files, resources, etc.)
