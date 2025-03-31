@@ -1,6 +1,6 @@
 If you do anything type of work in security you will have heard of the term 0-day or CVE. A CVE is simply "[..a list of publicly disclosed computer security flaws.](https://www.redhat.com/en/topics/security/what-is-cve)" This means a CVE can be any security flaw in any piece of software. How hard can it be to find a vulnerability in ONE of the millions and millions of free and open source software.
 
-Still the challenge is finding the right project to test on. I read some articles and watched some videos. The best one I saw was from [Joe Helle](https://www.youtube.com/watch?v=epBR-9jF4r8). His methodology led me to finding OpenMRS.
+The challenge for me was finding the right project to test on. I read some articles, watched some videos, and eventually came across a great turtorial from [Joe Helle](https://www.youtube.com/watch?v=epBR-9jF4r8). His methodology led me to finding OpenMRS.
 
 ```
 medical records foss
